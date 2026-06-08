@@ -1,85 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deployable Air-Brake System | Interactive Visualize Viewer</title>
+
+  <title>Samir Yunus · Air-Brake Interactive Viewer</title>
   <meta
     name="description"
-    content="Interactive SOLIDWORKS Visualize Multi Orbit 360 viewer for a deployable high-power rocket air-brake system."
+    content="Interactive SOLIDWORKS Visualize Multi Orbit 360 viewer for Samir Yunus's deployable high-power rocket air-brake system."
   />
-  <link rel="stylesheet" href="viewer-style.css" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="stylesheet" href="airbrakes-viewer.css" />
 </head>
 
 <body>
-  <main class="page">
-    <section class="intro">
-      <p class="eyebrow">SOLIDWORKS Visualize Professional · Multi Orbit 360</p>
+  <div class="bg"></div>
 
-      <div class="intro-grid">
-        <div>
-          <h1>Deployable Air-Brake System</h1>
-          <p class="summary">
-            Interactive visualization of a deployable high-power rocket air-brake assembly.
-            This viewer was created to communicate the mechanical packaging, electronics
-            integration, servo actuation, and transparent enclosure design more clearly than
-            a static render.
+  <div class="shell">
+    <div class="page viewer-page">
+
+      <aside class="sidebar">
+        <div class="hero-section reveal-visible">
+          <div class="hero-row">
+            <h1 class="name">Samir Yunus</h1>
+            <a class="dark-mode-btn home-icon" href="https://samiryunus.github.io/" aria-label="Back to portfolio">↩</a>
+          </div>
+
+          <div class="role-line">
+            Aerospace Engineering student at Rutgers University
+          </div>
+
+          <p class="value-proposition">
+            Interactive SOLIDWORKS Visualize viewer for a deployable high-power rocket air-brake assembly.
           </p>
+
+          <div class="pill-row">
+            <span class="pill">SOLIDWORKS Visualize</span>
+            <span class="pill">Multi Orbit 360</span>
+            <span class="pill">CAD Visualization</span>
+          </div>
+
+          <div class="section-label">Purpose</div>
+          <div class="sidebar-block">
+            I created this viewer after learning that SOLIDWORKS Visualize is used in industry workflows.
+            The goal was to better communicate mechanical packaging, electronics integration, transparency,
+            and servo actuation beyond a static render.
+          </div>
+
+          <div class="section-label">Focus Areas</div>
+          <ul class="sidebar-list">
+            <li>Electronics and servo integration</li>
+            <li>Transparent enclosure visibility</li>
+            <li>Mechanical packaging and mounting</li>
+            <li>Render iteration and design communication</li>
+          </ul>
+
+          <div class="cta-colm">
+            <a class="open-btn glow" href="#viewer">Open Viewer</a>
+            <a class="blue-btn" href="#progression">Render Progression</a>
+          </div>
         </div>
+      </aside>
 
-        <aside class="context-card">
-          <h2>Why this viewer</h2>
-          <p>
-            After learning that SOLIDWORKS Visualize is part of the workflow, I spent time
-            learning the tool and iterating through camera angles, materials, transparency,
-            and render settings to create a clearer presentation of the assembly.
-          </p>
-        </aside>
-      </div>
-    </section>
+      <main class="content">
+        <div class="content-inner viewer-content">
+          <header class="content-header">
+            <a class="breadcrumb-link" href="https://samiryunus.github.io/">← Back to portfolio</a>
+            <h2>Deployable Air-Brake System</h2>
+          </header>
 
-    <section class="viewer-section" aria-label="Interactive 3D viewer">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Interactive Assembly</p>
-          <h2>Rotate the Model</h2>
+          <section class="featured-project reveal-visible">
+            <div class="featured-header">
+              <span class="featured-badge">Interactive</span>
+              <h3>SOLIDWORKS Visualize Multi Orbit 360 Viewer</h3>
+            </div>
+
+            <p class="featured-summary">
+              Drag inside the frame to rotate around the assembly. This interactive viewer shows the
+              air-brake system from multiple angles so the electronics, servo actuator, transparent
+              enclosure, and mechanical structure can be inspected more clearly.
+            </p>
+
+            <div class="featured-impact">
+              <h4>What this shows</h4>
+              <ul>
+                <li>Progression from CAD model to higher-fidelity presentation render.</li>
+                <li>Transparent material tuning to reveal the internal mechanism.</li>
+                <li>Camera and composition choices that make the design easier to understand.</li>
+              </ul>
+            </div>
+
+            <div class="viewer-frame-wrap" id="viewer">
+              <iframe
+                class="viewer-frame"
+                src="Data/index.html"
+                title="Interactive SOLIDWORKS Visualize Multi Orbit 360 viewer of deployable air-brake system"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <p class="viewer-note">
+              If the viewer does not load, make sure the Visualize-generated <strong>Data</strong> folder
+              is uploaded next to this page.
+            </p>
+          </section>
+
+          <section class="project reveal-visible" id="progression">
+            <div class="project-header static-header">
+              <div class="project-title">Render Progression</div>
+              <div class="project-meta">
+                <span class="project-role-badge">Iteration</span>
+                <span class="project-type">Camera · Materials · Transparency</span>
+              </div>
+            </div>
+
+            <div class="project-body always-open">
+              <p class="project-tagline">
+                These four renders show the trial-and-error process used to refine the final visualization.
+              </p>
+
+              <div class="project-media viewer-gallery">
+                <figure>
+                  <img src="renders/render-01.jpg" alt="Initial air-brake render composition" />
+                  <figcaption>01 · Initial composition</figcaption>
+                </figure>
+                <figure>
+                  <img src="renders/render-02.jpg" alt="Air-brake render with improved view of mechanism" />
+                  <figcaption>02 · Visibility pass</figcaption>
+                </figure>
+                <figure>
+                  <img src="renders/render-03.jpg" alt="Air-brake render with refined camera and materials" />
+                  <figcaption>03 · Material/camera refinement</figcaption>
+                </figure>
+                <figure>
+                  <img src="renders/render-04.jpg" alt="Final air-brake render presentation" />
+                  <figcaption>04 · Final presentation render</figcaption>
+                </figure>
+              </div>
+
+              <div class="chips">
+                <span class="chip">CAD visualization</span>
+                <span class="chip">Product rendering</span>
+                <span class="chip">Interactive viewer</span>
+                <span class="chip">Design communication</span>
+              </div>
+            </div>
+          </section>
+
+          <footer class="site-footer">
+            <span>Built to match Samir Yunus's engineering portfolio theme.</span>
+            <div class="footer-links">
+              <a href="mailto:samiryunus04@gmail.com">Contact</a>
+              <a href="https://linkedin.com/in/samiryunus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </footer>
         </div>
-        <p class="hint">Drag inside the viewer to inspect the air-brake system.</p>
-      </div>
+      </main>
 
-      <div class="viewer-shell">
-        <iframe
-          src="Data/index.html"
-          title="Interactive SOLIDWORKS Visualize viewer for deployable rocket air-brake assembly"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <p class="small-note">
-        If the viewer does not appear, open this page from a hosted website or local server,
-        and make sure the Visualize-generated <strong>Data</strong> folder is next to this file.
-      </p>
-    </section>
-
-    <section class="details">
-      <article>
-        <h3>Focus Areas</h3>
-        <ul>
-          <li>Mechanical packaging of the air-brake assembly</li>
-          <li>Electronics and servo integration</li>
-          <li>Transparent enclosure and internal mechanism visibility</li>
-          <li>Iterative visual communication using SOLIDWORKS Visualize</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Project Context</h3>
-        <p>
-          Developed for a deployable rocket air-brake project focused on controlling apogee
-          and improving high-power rocket flight accuracy.
-        </p>
-      </article>
-    </section>
-  </main>
+    </div>
+  </div>
 </body>
 </html>
