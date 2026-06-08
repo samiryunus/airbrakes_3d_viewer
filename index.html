@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Samir Yunus · Air-Brake Interactive Viewer</title>
-  <meta
-    name="description"
-    content="Interactive SOLIDWORKS Visualize Multi Orbit 360 viewer for Samir Yunus's deployable high-power rocket air-brake system."
-  />
-
+  <meta name="description" content="Interactive SOLIDWORKS Visualize Multi Orbit 360 viewer for Samir Yunus's deployable high-power rocket air-brake system." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="stylesheet" href="airbrakes-viewer.css" />
@@ -20,17 +15,13 @@
 
   <div class="shell">
     <div class="page viewer-page">
-
       <aside class="sidebar">
-        <div class="hero-section reveal-visible">
+        <div class="hero-section">
           <div class="hero-row">
             <h1 class="name">Samir Yunus</h1>
-            <a class="dark-mode-btn home-icon" href="https://samiryunus.github.io/samirportfolio/" aria-label="Back to portfolio">↩</a>
           </div>
 
-          <div class="role-line">
-            Aerospace Engineering student at Rutgers University
-          </div>
+          <div class="role-line">Aerospace Engineering student at Rutgers University</div>
 
           <p class="value-proposition">
             Interactive SOLIDWORKS Visualize viewer for a deployable high-power rocket air-brake assembly.
@@ -56,12 +47,20 @@
             <li>Mechanical packaging and mounting</li>
             <li>Render iteration and design communication</li>
           </ul>
-
-          <div class="cta-colm">
-            <a class="open-btn glow" href="#viewer">Open Viewer</a>
-            <a class="blue-btn" href="#progression">Render Progression</a>
-          </div>
         </div>
+        <div class="section-label">Contact</div>
+
+<div class="contact-card">
+    <div class="contact-phone">732-697-8697</div>
+
+    <div class="contact-location">
+        Old Bridge, NJ · U.S. Citizen · Open to relocation
+    </div>
+
+    <a class="contact-email" href="mailto:samiryunus04@gmail.com">
+        samiryunus04@gmail.com
+    </a>
+</div>
       </aside>
 
       <main class="content">
@@ -71,7 +70,7 @@
             <h2>Deployable Air-Brake System</h2>
           </header>
 
-          <section class="featured-project reveal-visible">
+          <section class="featured-project">
             <div class="featured-header">
               <span class="featured-badge">Interactive</span>
               <h3>SOLIDWORKS Visualize Multi Orbit 360 Viewer</h3>
@@ -107,7 +106,7 @@
             </p>
           </section>
 
-          <section class="project reveal-visible" id="progression">
+          <section class="project" id="progression">
             <div class="project-header static-header">
               <div class="project-title">Render Progression</div>
               <div class="project-meta">
@@ -123,19 +122,19 @@
 
               <div class="project-media viewer-gallery">
                 <figure>
-                  <img src="Data/render-01.jpg" alt="Initial air-brake render composition" />
+                  <img src="Data/render-01.jpg" onclick="openModal(0)" alt="Initial air-brake render composition" />
                   <figcaption>01 · Initial composition</figcaption>
                 </figure>
                 <figure>
-                  <img src="Data/render-02.jpg" alt="Air-brake render with improved view of mechanism" />
+                  <img src="Data/render-02.jpg" onclick="openModal(1)" alt="Air-brake render with improved view of mechanism" />
                   <figcaption>02 · Visibility pass</figcaption>
                 </figure>
                 <figure>
-                  <img src="Data/render-03.jpg" alt="Air-brake render with refined camera and materials" />
+                  <img src="Data/render-03.jpg" onclick="openModal(2)" alt="Air-brake render with refined camera and materials" />
                   <figcaption>03 · Material/camera refinement</figcaption>
                 </figure>
                 <figure>
-                  <img src="Data/render-04.jpg" alt="Final air-brake render presentation" />
+                  <img src="Data/render-04.jpg" onclick="openModal(3)" alt="Final air-brake render presentation" />
                   <figcaption>04 · Final presentation render</figcaption>
                 </figure>
               </div>
@@ -149,16 +148,102 @@
             </div>
           </section>
 
-        <footer class="site-footer">
+          <footer class="site-footer">
             <div class="footer-links">
-                <a href="mailto:samiryunus04@gmail.com">Contact</a>
-                <a href="https://linkedin.com/in/samiryunus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="#" onclick="openContactModal(event)">Contact</a>
+              <a href="https://linkedin.com/in/samiryunus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
-        </footer>
+          </footer>
         </div>
       </main>
-
     </div>
   </div>
+
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+  <div class="contact-modal-card">
+    <button class="contact-modal-close" onclick="closeContactModal()">×</button>
+
+    <div class="section-label">Contact</div>
+
+    <div class="contact-card modal-contact-card">
+      <div class="contact-phone">732-697-8697</div>
+      <div class="contact-location">
+        Old Bridge, NJ · U.S. Citizen · Open to relocation
+      </div>
+      <a class="contact-email" href="mailto:samiryunus04@gmail.com">
+        samiryunus04@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openContactModal(event) {
+    event.preventDefault();
+    document.getElementById("contactModal").classList.add("open");
+  }
+
+  function closeContactModal() {
+    document.getElementById("contactModal").classList.remove("open");
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeContactModal();
+  });
+
+  document.getElementById("contactModal").addEventListener("click", function (e) {
+    if (e.target.id === "contactModal") closeContactModal();
+  });
+</script>
+
+  <div class="image-modal" id="imageModal" aria-hidden="true">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close image viewer">×</button>
+    <button class="modal-arrow modal-prev" onclick="changeImage(-1)" aria-label="Previous image">‹</button>
+    <img id="modalImage" src="" alt="Expanded air-brake render" />
+    <button class="modal-arrow modal-next" onclick="changeImage(1)" aria-label="Next image">›</button>
+    <div class="modal-count" id="modalCount">1 / 4</div>
+  </div>
+
+  <script>
+    const galleryImages = ["Data/render-01.jpg", "Data/render-02.jpg", "Data/render-03.jpg", "Data/render-04.jpg"];
+    let currentImageIndex = 0;
+
+    function openModal(index) {
+      currentImageIndex = index;
+      updateModalImage();
+      document.getElementById("imageModal").classList.add("open");
+      document.getElementById("imageModal").setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.remove("open");
+      document.getElementById("imageModal").setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    function changeImage(direction) {
+      currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+      updateModalImage();
+    }
+
+    function updateModalImage() {
+      document.getElementById("modalImage").src = galleryImages[currentImageIndex];
+      document.getElementById("modalCount").textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+    }
+
+    document.addEventListener("keydown", function (e) {
+      const modal = document.getElementById("imageModal");
+      if (!modal.classList.contains("open")) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowRight") changeImage(1);
+      if (e.key === "ArrowLeft") changeImage(-1);
+    });
+
+    document.getElementById("imageModal").addEventListener("click", function (e) {
+      if (e.target.id === "imageModal") closeModal();
+    });
+  </script>
+  
 </body>
 </html>
